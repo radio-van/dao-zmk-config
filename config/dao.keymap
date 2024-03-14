@@ -30,6 +30,31 @@
     };
 };
 
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp ENTER>;
+        };
+    };
+};
+
+
+/ {
+    macros {
+        macro_qts: macro_qts {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SQT &kp SQT &kp LEFT>;
+        };
+    };
+};
+
+
 / {
     behaviors {
         td_cl: tap_dance_col {
@@ -37,6 +62,12 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&kp COLON>, <&kp NUMBER_0>;
+        };
+        td_sqt: tap_dance_sqt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&macro_qts>;
         };
     };
 
