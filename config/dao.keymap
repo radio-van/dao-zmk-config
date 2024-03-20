@@ -102,19 +102,31 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SEMI>, <&kp COLON>, <&kp NUMBER_0>;
+            bindings = <&kp SEMI>, <&kp COLON>, <&macro_par>;
         };
         td_sqt: tap_dance_sqt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&macro_qts>;
+            bindings = <&kp SQT>, <&macro_qts>, <&kp LEFT_BRACKET>;
         };
         td_min: tap_dance_min {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp MINUS>, <&kp UNDER>;
+            bindings = <&kp MINUS>, <&kp UNDER>, <&kp RIGHT_BRACKET>;
+        };
+        td_dot: tap_dance_dot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&macro_int>;
+        };
+        td_sls: tap_dance_sls {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp PIPE>, <kp BACKSLASH>;
         };
     };
 
