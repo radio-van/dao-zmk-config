@@ -68,6 +68,18 @@
             bindings
                 = <&macro_tap &to DEF &kp ENTER>;
         };
+        macro_par: macro_par {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+        };
+        macro_int: macro_int {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp GT &kp GT;
+        };
     };
 };
 
