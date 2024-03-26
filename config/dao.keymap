@@ -84,17 +84,29 @@
             bindings
                 = <&macro_tap &to DEF &kp ENTER>;
         };
+        macro_int: macro_int {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp GT &kp GT>;
+        };
         macro_par: macro_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
         };
-        macro_int: macro_int {
+        macro_brak: macro_brak {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp GT &kp GT>;
+                = <&macro_tap &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+        };
+        macro_brac: macro_brac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
         };
     };
 };
@@ -138,11 +150,11 @@
             tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&macro_int>;
         };
-        td_sls: tap_dance_sls {
+        td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp FSLH>, <&kp PIPE>, <&kp BACKSLASH>;
+            bindings = <&kp PIPE>, <&kp BACKSLASH>;
         };
     };
 
