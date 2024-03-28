@@ -178,19 +178,19 @@
 
         default_layer {
             bindings = <
-&kp TILDE   &kp Q  &kp W  &kp E                &kp R                &kp T                 &kp Y            &kp U              &kp I      &kp O    &kp P     &td_min
-&td_pipe    &kp A  &kp S  &kp D                &mt LEFT_SHIFT F     &mt LEFT_GUI G        &mt RIGHT_GUI H  &mt RIGHT_SHIFT J  &kp K      &kp L    &td_cl    &td_sqt
-&kp LC(SPC) &kp Z  &kp X  &kp C                &kp V                &kp B                 &kp N            &kp M              &kp COMMA  &td_dot  &kp FSLH  &kp GRAVE
-                          &mt LEFT_ALT INSERT  &td_sym              &mt LEFT_SHIFT SPACE  &mt LCTRL ENTER  &td_nav            &kp LC(B)
+&kp TILDE     &kp Q  &kp W  &kp E                &kp R                &kp T                 &kp Y            &kp U              &kp I      &kp O    &kp P     &td_min
+&macro_grave  &kp A  &kp S  &kp D                &mt LEFT_SHIFT F     &mt LEFT_GUI G        &mt RIGHT_GUI H  &mt RIGHT_SHIFT J  &kp K      &kp L    &td_cl    &td_sqt
+&kp LC(SPC)   &kp Z  &kp X  &kp C                &kp V                &kp B                 &kp N            &kp M              &kp COMMA  &td_dot  &kp FSLH  &td_pipe
+                            &mt LEFT_ALT INSERT  &td_sym              &mt LEFT_SHIFT SPACE  &mt LCTRL ENTER  &td_nav            &kp LC(B)
             >;
         };
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL  &kp AT_SIGN    &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR   &kp MINUS
-&macro_brac  &kp N1    &kp N2         &kp N3        &kp N4        &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0     &kp EQUAL
-&macro_brak  &none     &none          &none         &kp LBRC      &kp RBRC     &kp LT        &kp GT    &kp COMMA     &kp DOT   &trans     &kp PLUS
-                                      &trans        &trans        &macro_spc   &macro_ent    &kp DOT   &trans
+&macro_par   &kp EXCL      &kp AT_SIGN    &kp HASH      &kp DOLLAR    &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR   &kp MINUS
+&macro_brac  &kp N1        &kp N2         &kp N3        &kp N4        &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0     &kp EQUAL
+&macro_brak  &macro_trans  &kp LBRC       &kp RBRC      &kp LBKT      &kp RBKT     &kp LT        &kp GT    &kp COMMA     &kp DOT   &trans     &kp PLUS
+                                          &trans        &trans        &macro_spc   &macro_ent    &kp DOT   &trans
             >;
         };
 
