@@ -133,13 +133,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 1 ESC>, <&tog 1>;
+            bindings = <&sl 1>, <&tog 1>;
         };
         td_nav: tap_dance_nav {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 2 BACKSPACE>, <&tog 2>;
+            bindings = <&sl 2>, <&tog 2>;
         };
         td_cl: tap_dance_col {
             compatible = "zmk,behavior-tap-dance";
