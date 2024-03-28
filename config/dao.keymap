@@ -84,12 +84,20 @@
             bindings
                 = <&macro_tap &to DEF &kp ENTER>;
         };
+        macro_trans: macro_trans {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to DEF &trans>;
+        };
+
         macro_int: macro_int {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp GT &kp GT>;
         };
+
         macro_par: macro_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
