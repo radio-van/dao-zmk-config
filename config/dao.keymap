@@ -82,7 +82,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &to DEF &trans>;
+                = <&macro_tap &trans &to DEF>;
         };
 
         macro_int: macro_int {
