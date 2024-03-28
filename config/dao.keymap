@@ -66,12 +66,6 @@
 
 / {
     macros {
-        macro_qts: macro_qts {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp SQT &kp SQT &kp LEFT>;
-        };
         macro_spc: macro_spc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -115,6 +109,19 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+        };
+
+        macro_qts: macro_qts {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SQT &kp SQT &kp LEFT>;
+        };
+        macro_grave: macro_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
         };
     };
 };
