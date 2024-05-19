@@ -1,43 +1,6 @@
 # ZMK Firmware for Dao keyboard
 
-This is a repository for a ZMK Firmware for both Dao42 and Dao44 keyboards.
-
-* [main](https://github.com/yumagulovrn/dao-zmk-config/tree/main) branch is for Dao42
-* [dao44](https://github.com/yumagulovrn/dao-zmk-config/tree/dao44) branch is, obviously, for Dao44
-
-## Default keymap
-
-### Dao42
-
-Visual representation of the default keymap in keyboard-layout-editor: [KLE](http://www.keyboard-layout-editor.com/#/gists/67a81f6b83c65abcda5e7f32989a1688)
-
-This layout is heavily inspired by [this](https://github.com/aroum/Watchman-layouts)
-
-### Dao44
-
-Visual representation of the default keymap in keyboard-layout-editor: [KLE](http://www.keyboard-layout-editor.com/#/gists/c6ba0634e5b92366be9f324775394e66)
-
-This layout is heavily inspired by [this](https://github.com/KGOH/Jian-Info)
-
-Because of current ZMK limitations, Dao44 keymap is in the branch [dao44](https://github.com/yumagulovrn/dao-zmk-config/tree/dao44)
-
-## FAQ
-
-- [FAQ](#faq)
-  - [How to change the keymap?](#how-to-change-the-keymap)
-  - [How to flash the keyboard?](#how-to-flash-the-keyboard)
-  - [How to pair halves?](#how-to-pair-halves)
-  - [Problems](#problems)
-    - [I'm getting File Transfer Error after copying firmware to the keyboard](#im-getting-file-transfer-error-after-copying-firmware-to-the-keyboard)
-
-### How to change the keymap?
-
-1. Fork the repository https://github.com/yumagulovrn/dao-zmk-config
-2. Make changes to the [dao.keymap](../config/boards/arm/dao/dao.keymap) file in your repository OR use wonderful https://nickcoutsos.github.io/keymap-editor/
-3. Commit changes to your repository
-4. Go to `Actions` tab in your repository
-5. Wait for the GitHub Action to complete
-6. Grab `firmware.zip` file - it contains firmware for both of your halves
+Based on [yumagulovrn/dao-zmk-config](https://github.com/yumagulovrn/dao-zmk-config)
 
 ### How to flash the keyboard?
 
@@ -56,8 +19,26 @@ Because of current ZMK limitations, Dao44 keymap is in the branch [dao44](https:
 2. Turn on the power for both halves (move slider to position `ON`)
 3. Press `RESET` button **once** on both halves **simultaneously**
 
-### Problems
 
-#### I'm getting File Transfer Error after copying firmware to the keyboard
+# Current layout
+```
+DEFAULT:
+` ``         Q    W    E           R         T           |      Y    RSHIFT U       I    O    P      - _
+~ ``````     A    S    LCTRL D     LSFT F    LGUI G      |      H           J       K    L    : ;    ' ''
+kb layout    Z    X    C           V         B           |      N           M       ,    .    /      \ | ]
+                       LALT INS    LCTRL     LSFT SPACE  |  LOWER       UPPER    TMUX 
 
-It's OK. Proof: https://zmk.dev/docs/troubleshooting#file-transfer-error
+LOWER:
+()           !    @    #           $         %           |      ^           &       *    (    )      - 
+{}           1    2    3           4         5           |      6           7       8    9    0      =
+[]                {    }           [         ]           |      <           >       ,    .           + 
+                                                                DEF         DEF 
+UPPER:
+F1           F2   F3   F4          F5        F6          |      HOME        END    
+F7           F8   F9   F10         F11       F12         |      LEFT        DOWN    UP   RIGHT
+BT0          BT1  BT2  BT3         BT4       BTCLR       |      PGDOWN      PGUP
+                                                                DEF         DEF
+```
+
+
+# Changelog
