@@ -24,7 +24,7 @@ Based on [yumagulovrn/dao-zmk-config](https://github.com/yumagulovrn/dao-zmk-con
 ```
 DEFAULT:
 ` ``         Q    W    E           R         T           |      Y    RSHIFT U       I    O    P      - _
-~ ``````     A    S    LCTRL D     LSFT F    LGUI G      |      H           J       K    L    : ;    ' ''
+~ ``````     A    S    LCTRL D     LSFT F .  LGUI G      |      H           J       K    L    : ;    ' ''
 kb layout    Z    X    C           V         B           |      N           M       ,    .    /      \ | ]
                        LALT INS    LCTRL     LSFT SPACE  |  LOWER       UPPER    TMUX 
 
