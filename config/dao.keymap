@@ -183,83 +183,78 @@
             tapping-term-ms = <200>;
             bindings = <&kp TILDE>, <&macro_grave_tripple>;
         };
-        td_f_dot: tap_dance_dot {
+
+        td_dot: tap_dance_dot {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT F>, <&kp DOT>;
+            bindings = <&trans>, <&kp DOT>;
         };
-        td_d_com: tap_dance_comma {
+        td_com: tap_dance_comma {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LCTRL D>, <&kp COMMA>;
+            bindings = <&trans>, <&kp COMMA>;
         };
-        td_g_grv: tap_dance_g_grave {
+        td_grv: tap_dance_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LGUI G>, <&kp GRAVE>;
+            bindings = <&trans>, <&kp GRAVE>;
         };
-        td_t_tld: tap_dance_t_tilda {
+        td_tld: tap_dance_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp T>, <&kp TILDE>;
+            bindings = <&trans>, <&kp TILDE>;
         };
-        td_h_esc: tap_dance_h_esc {
+        td_esc: tap_dance_esc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp H>, <&kp ESC>;
+            bindings = <&trans>, <&kp ESC>;
         };
-        td_j_esc: tap_dance_j_esc {
+        td_ctc: tap_dance_ctrlc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt RSHIFT J>, <&kp ESC>;
+            bindings = <&trans>, <&kp LC(C)>;
         };
-        td_c_ctc: tap_dance_c_ctrlc {
+        td_und: tap_dance_underscore {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp C>, <&kp LC(C)>;
+            bindings = <&trans>, <&kp UNDER>;
         };
-        td_u_und: tap_dance_u_underscore {
+        td_min: tap_dance_minus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp U>, <&kp UNDER>;
+            bindings = <&trans>, <&kp MINUS>;
         };
-        td_m_min: tap_dance_m_minus {
+        td_eql: tap_dance_equal {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp M>, <&kp MINUS>;
+            bindings = <&trans>, <&kp EQUAL>;
         };
-        td_e_eql: tap_dance_e_equal {
+        td_pls: tap_dance_plus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp E>, <&kp EQUAL>;
+            bindings = <&trans>, <&kp PLUS>;
         };
-        td_p_pls: tap_dance_p_plus {
+        td_qes: tap_dance_question {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp PLUS>;
+            bindings = <&trans>, <&kp QMARK>;
         };
-        td_q_qes: tap_dance_q_question {
+        td_ctv: tap_dance_ctrlv {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&kp QMARK>;
-        };
-        td_v_ctv: tap_dance_v_ctrlv {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp V>, <&kp LC(V)>;
+            bindings = <&trans>, <&kp LC(V)>;
         };
     };
 
@@ -268,10 +263,10 @@
 
         default_layer {
             bindings = <
-&td_grave    &td_q_qes  &kp W  &td_e_eql          &kp R            &td_t_tld       &kp Y            &td_u_und     &kp I      &kp O    &td_p_pls &td_min
-&td_tilda    &kp A      &kp S  &td_d_com          &td_f_dot        &td_g_grv       &td_h_esc        &td_j_esc     &kp K      &kp L    &td_cl    &td_sqt
-&kp LC(SPC)  &kp Z      &kp X  &td_c_ctc          &td_v_ctv        &kp B           &kp N            &td_m_min     &kp COMMA  &kp DOT  &kp FSLH  &td_pipe
-                        &mt LEFT_ALT INSERT       &sk LCTRL   &mt LSHIFT SPACE     &td_sym          &td_nav       &kp LC(B)
+&td_grave    &td_qes    &kp W   &td_eql          &kp R          &td_tld         &kp Y          &td_und     &kp I      &kp O    &td_pls   &td_min
+&td_tilda    &kp A      &kp S   &td_com          &td_dot        &td_grv         &td_esc        &td_esc     &kp K      &kp L    &td_cl    &td_sqt
+&kp LC(SPC)  &kp Z      &kp X   &td_ctc          &td_ctv        &kp B           &kp N          &td_min     &kp COMMA  &kp DOT  &kp FSLH  &td_pipe
+                    &mt LEFT_ALT INSERT      &sk LCTRL      &mt LSHIFT SPACE    &td_sym        &td_nav     &kp LC(B)
             >;
         };
 
