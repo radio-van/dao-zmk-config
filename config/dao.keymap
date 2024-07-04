@@ -85,13 +85,6 @@
                 = <&macro_tap &to DEF &trans>;
         };
 
-        macro_min: macro_min {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp MINUS &kp MINUS>;
-        };
-
         macro_par: macro_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -159,12 +152,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp SQT>, <&macro_qts>, <&kp LEFT_BRACKET>;
         };
-        td_min: tap_dance_min {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp MINUS>, <&kp UNDER>, <&macro_min>;
-        };
         td_grave: tap_dance_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -190,10 +177,10 @@
 
         default_layer {
             bindings = <
-&td_grave    &kp Q  &kp W  &kp E                &kp R            &kp T             &kp Y            &mt RSHIFT U  &kp I      &kp O    &kp P     &kp MINUS
-&td_tilda    &kp A  &kp S  &mt LCTRL D          &mt LSHIFT F     &mt LGUI G        &kp H            &kp J         &kp K      &kp L    &td_cl    &td_sqt
-&kp LC(SPC)  &kp Z  &kp X  &kp C                &kp V            &kp B             &kp N            &kp M         &kp COMMA  &kp DOT  &kp FSLH  &td_pipe
-                           &mt LEFT_ALT INSERT  &sk LCTRL        &mt LSHIFT SPACE  &td_sym          &td_nav       &kp LC(B)
+&td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &kp U   &kp I       &kp O     &kp P      &kp MINUS
+&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J   &kp K       &kp L     &td_cl     &td_sqt
+&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M   &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
+                              &mt LEFT_ALT INSERT   &sk LCTRL        &mt LSHIFT SPACE    &td_sym   &td_nav   &kp LC(B)
             >;
         };
 
