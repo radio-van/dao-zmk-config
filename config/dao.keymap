@@ -66,12 +66,6 @@
 
 / {
     macros {
-        macro_spc: macro_spc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to DEF &kp SPACE>;
-        };
         macro_ent: macro_ent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
