@@ -42,3 +42,17 @@ BT0          BT1  BT2  BT3         BT4       BTCLR       |      PGDOWN      PGUP
 
 
 # Changelog
+* `v2.2.0` - TD:
+    * C - Ctrl+C
+    * D - comma
+    * E - equal
+    * F - dot
+    * G - grave
+    * H - ESC
+    * J - ESC
+    * M - minus
+    * P - plus
+    * Q - question
+    * T - tilda
+    * V - Ctrl+V
+    * U - underscore

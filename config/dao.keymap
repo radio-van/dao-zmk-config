@@ -189,6 +189,78 @@
             tapping-term-ms = <200>;
             bindings = <&mt LSHIFT F>, <&kp DOT>;
         };
+        td_d_com: tap_dance_comma {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LCTRL D>, <&kp COMMA>;
+        };
+        td_g_grv: tap_dance_g_grave {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LGUI G>, <&kp GRAVE>;
+        };
+        td_t_tld: tap_dance_t_tilda {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp T>, <&kp TILDE>;
+        };
+        td_h_esc: tap_dance_h_esc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp H>, <&kp ESC>;
+        };
+        td_j_esc: tap_dance_j_esc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt RSHIFT J>, <&kp ESC>;
+        };
+        td_c_ctc: tap_dance_c_ctrlc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
+        td_u_und: tap_dance_u_underscore {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp U>, <&kp UNDER>;
+        };
+        td_m_min: tap_dance_m_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp M>, <&kp MINUS>;
+        };
+        td_e_eql: tap_dance_e_equal {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&kp EQUAL>;
+        };
+        td_p_pls: tap_dance_p_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp P>, <&kp PLUS>;
+        };
+        td_q_qes: tap_dance_q_question {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp QMARK>;
+        };
+        td_v_ctv: tap_dance_v_ctrlv {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>, <&kp LC(V)>;
+        };
     };
 
     keymap {
@@ -196,10 +268,10 @@
 
         default_layer {
             bindings = <
-&td_grave    &kp Q  &kp W  &kp E                &kp R            &kp T             &kp Y            &mt RSHIFT U  &kp I      &kp O    &kp P     &td_min
-&td_tilda    &kp A  &kp S  &mt LCTRL D          &td_f_dot        &mt LGUI G        &kp H            &kp J         &kp K      &kp L    &td_cl    &td_sqt
-&kp LC(SPC)  &kp Z  &kp X  &kp C                &kp V            &kp B             &kp N            &kp M         &kp COMMA  &kp DOT  &kp FSLH  &td_pipe
-                           &mt LEFT_ALT INSERT  &sk LCTRL        &mt LSHIFT SPACE  &td_sym          &td_nav       &kp LC(B)
+&td_grave    &td_q_qes  &kp W  &td_e_eql          &kp R            &td_t_tld       &kp Y            &td_u_und     &kp I      &kp O    &td_p_pls &td_min
+&td_tilda    &kp A      &kp S  &td_d_com          &td_f_dot        &td_g_grv       &td_h_esc        &td_j_esc     &kp K      &kp L    &td_cl    &td_sqt
+&kp LC(SPC)  &kp Z      &kp X  &td_c_ctc          &td_v_ctv        &kp B           &kp N            &td_m_min     &kp COMMA  &kp DOT  &kp FSLH  &td_pipe
+                        &mt LEFT_ALT INSERT       &sk LCTRL   &mt LSHIFT SPACE     &td_sym          &td_nav       &kp LC(B)
             >;
         };
 
