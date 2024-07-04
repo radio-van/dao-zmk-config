@@ -48,7 +48,7 @@
         combo_enter {
             timeout-ms = <50>;
             key-positions = <7 19>;
-            bindings = <&macro_ent>;
+            bindings = <&macro_trans_kp ENTER>;
         };
         combo_tab {
             timeout-ms = <50>;
@@ -66,11 +66,11 @@
 
 / {
     macros {
-        macro_ent: macro_ent {
+        macro_ent: macro_trans_kp {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings
-                = <&macro_tap &to DEF &kp ENTER>;
+                = <&macro_param_1to1>, <&macro_tap &to DEF &kp MACRO_PLACEHOLDER>;
         };
         macro_trans: macro_trans {
             compatible = "zmk,behavior-macro";
