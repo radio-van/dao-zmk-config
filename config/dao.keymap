@@ -48,7 +48,7 @@
         combo_enter {
             timeout-ms = <50>;
             key-positions = <7 19>;
-            bindings = <&macro_trans_kp ENTER>;
+            bindings = <&macro_ent>;
         };
         combo_tab {
             timeout-ms = <50>;
@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to2>, <&macro_tap &to DEF &kp MACRO_PLACEHOLDER>;
+                = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
         macro_trans: macro_trans {
             compatible = "zmk,behavior-macro";
@@ -79,6 +79,12 @@
                 = <&macro_tap &to DEF &trans>;
         };
 
+        macro_ent: macro_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to DEF &kp ENTER>;
+        };
         macro_par: macro_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -177,10 +183,10 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc   &kp I       &kp O     &kp P      &kp MINUS
-&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &td_sqt
-&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
-                              &mt LEFT_ALT INSERT   &sk LCTRL        &mt LSHIFT SPACE    &td_sym   &td_nav     &kp LC(B)
+&td_grave                 &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc   &kp I       &kp O     &kp P      &kp MINUS
+&macro_trans_kp TILDE     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &td_sqt
+&kp LC(SPC)               &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
+                                          &mt LEFT_ALT INSERT   &sk LCTRL        &mt LSHIFT SPACE    &td_sym   &td_nav     &kp LC(B)
             >;
         };
 
