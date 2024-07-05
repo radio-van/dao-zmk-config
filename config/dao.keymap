@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
+                = <&macro_param_1to2>, <&macro_tap &kp MINUS &kp MACRO_PLACEHOLDER>;
         };
         macro_trans: macro_trans {
             compatible = "zmk,behavior-macro";
@@ -83,7 +83,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &to DEF &kp ENTER>;
+                = <&macro_tap &kp ENTER &to DEF>;
         };
         macro_par: macro_par {
             compatible = "zmk,behavior-macro";
