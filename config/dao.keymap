@@ -128,18 +128,36 @@
 
 / {
     behaviors {
+        // hold - momentary layer (1st arg)
+        // tap - one-shot (aka sticky) modifier (2nd arg)
+        ml_ht: mod_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sk>;
+        };
+        // hold - sym
+        // tap - one-shot shift
+        // doble-tap - toggle sym layer
+        // tripple-tap - default layer
         td_sym: tap_dance_sym {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sl 1>, <&tog 1>;
+            bindings = <&ml_ht 1 LSHIFT>, <&tog 1>, <&to DEF>;
         };
+        // hold - nav
+        // tap - one-shot ctrl
+        // doble-tap - toggle nav layer
+        // tripple-tap - default layer
         td_nav: tap_dance_nav {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sl 2>, <&tog 2>;
+            bindings = <&ml_ht 2 LCTRL>, <&tog 2>, <&to DEF>;
         };
+
         td_cl: tap_dance_col {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -183,10 +201,10 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc   &kp I       &kp O     &kp P      &kp MINUS
-&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &td_sqt
-&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
-                                         &mt LEFT_ALT INSERT   &sk LCTRL        &mt LSHIFT SPACE     &td_sym   &td_nav     &kp LC(B)
+&td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc     &kp I       &kp O     &kp P      &kp MINUS
+&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J       &kp K       &kp L     &td_cl     &td_sqt
+&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M       &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
+                                      &mt LEFT_ALT INSERT        &sk LCTRL      &mt LSHIFT SPACE     &mt LSHIFT  &td_sym   &td_nav     &kp LC(B)
             >;
         };
 
