@@ -176,7 +176,15 @@
             tapping-term-ms = <200>;
             bindings = <&ht_ml 2 LCTRL>, <&tog 2>, <&to DEF>;
         };
-
+        // tap - toggle SYM
+        // hold - NAV
+        // double-tap - DEFAULT
+        td_sn: tap_dance_sym_nav {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ht_ll 2 1>, <&to DEF>;
+        };
         td_cl: tap_dance_col {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -223,7 +231,7 @@
 &td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc     &kp I       &kp O     &kp P      &ht_s UNDER MINUS
 &td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J       &kp K       &kp L     &td_cl     &td_sqt
 &kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M       &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
-                                      &mt LEFT_ALT INSERT        &sk LCTRL      &mt LSHIFT SPACE     &td_sym     &td_nav     &kp LC(B)
+                                      &mt LEFT_ALT INSERT        &sk LCTRL      &mt LSHIFT SPACE     &td_sn      &td_nav     &kp LC(B)
             >;
         };
 
