@@ -128,7 +128,7 @@
 
 / {
     behaviors {
-        // hold - some kef
+        // hold - some key
         // tap - some other key
         ht_s: hold_tap_simple {
             compatible = "zmk,behavior-hold-tap";
@@ -143,9 +143,19 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mo>, <&sk>;
         };
+        // tap - toggle one layer
+        // hold - select another layer
+        ht_ll: hold_tap_layers {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            bindings = <&mo>, <&tog>;
+        };
+
         // hold - sym
         // tap - one-shot shift
         // doble-tap - toggle sym layer
