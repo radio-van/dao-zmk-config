@@ -22,7 +22,7 @@ Based on [yumagulovrn/dao-zmk-config](https://github.com/yumagulovrn/dao-zmk-con
 
 # Changelog
 
-### v3.0.0
+### v3
 Goal is to minimaze usage of edge columns, on the way to 36 keys.
 * (test) `quote` and `double_quote` produces double-and-cursor-between on **hold**
 * `minus` and `plus` above `9` and `0` on **SYM** layer
