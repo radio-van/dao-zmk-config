@@ -287,10 +287,10 @@
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL      &kp AT_SIGN    &kp HASH      &kp DOLLAR   &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR   &kp MINUS
-&macro_brac  &kp N1        &kp N2         &kp N3        &kp N4       &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0     &kp EQUAL
-&macro_brak  &macro_trans  &kp LBRC       &kp RBRC      &kp LBKT     &kp RBKT     &kp LT        &kp GT    &kp COMMA     &kp DOT   &trans     &kp PLUS
-                                          &macro_trans  &macro_trans &macro_spc   &to DEF       &to DEF   &macro_trans
+&macro_par   &kp EXCL      &kp AT_SIGN    &kp HASH      &kp DOLLAR   &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &ht_s UNDER MINUS  &ht_s PLUS EQUAL  &kp MINUS
+&macro_brac  &kp N1        &kp N2         &kp N3        &kp N4       &kp N5       &kp N6        &kp N7    &kp N8        &kp N9             &kp N0            &kp EQUAL
+&macro_brak  &td_tilda     &kp LBRC       &kp RBRC      &kp LBKT     &kp RBKT     &kp LPAR      &kp RPAR  &kp COMMA     &kp DOT            &td_grave         &kp PLUS
+                              &ht_m &macro_dqt DQT      &td_sqt    &macro_spc     &to DEF       &kp FLSH  &td_pipe
             >;
         };
 
