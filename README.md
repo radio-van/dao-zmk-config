@@ -20,25 +20,22 @@ Based on [yumagulovrn/dao-zmk-config](https://github.com/yumagulovrn/dao-zmk-con
 3. Press `RESET` button **once** on both halves **simultaneously**
 
 
-# Current layout
-```
-DEFAULT:
-` ``         Q    W    E           R         T           |      Y    RSHIFT U       I    O    P      - _
-~ ``````     A    S    LCTRL D     LSFT F .  LGUI G      |      H           J       K    L    : ;    ' ''
-kb layout    Z    X    C           V         B           |      N           M       ,    .    /      \ | ]
-                       LALT INS    LCTRL     LSFT SPACE  |  LOWER       UPPER    TMUX 
-
-LOWER:
-()           !    @    #           $         %           |      ^           &       *    (    )      - 
-{}           1    2    3           4         5           |      6           7       8    9    0      =
-[]                {    }           [         ]           |      <           >       ,    .           + 
-                                                                DEF         DEF 
-UPPER:
-F1           F2   F3   F4          F5        F6          |      HOME        END    
-F7           F8   F9   F10         F11       F12         |      LEFT        DOWN    UP   RIGHT
-BT0          BT1  BT2  BT3         BT4       BTCLR       |      PGDOWN      PGUP
-                                                                DEF         DEF
-```
-
-
 # Changelog
+
+### v3.0.0
+Goal is to minimaze usage of edge columns, on the way to 36 keys.
+* (test) `quote` and `double_quote` produces double-and-cursor-between on **hold**
+* `minus` and `plus` above `9` and `0` on **SYM** layer
+* `(` and `)` on `N` and `M` on **SYM** layer
+* `~` and `grave` on `Z` and `/` on **SYM** layer
+* `insert` on left-bottom corner (temporary)
+* combos:
+    * `FG` = `space`
+    * `YU` = `[]`
+    * `HJ` = `{}`
+    * `NM` = `()`
+* tap-dances:
+    * `F` = `ESC`
+    * `E` = double `grave`
+    * `R` = `~`
+* fix space macro to proper exit from **SYM** layer

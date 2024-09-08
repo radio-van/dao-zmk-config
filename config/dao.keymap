@@ -219,7 +219,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&mo>, <&sl>;
         };
 
@@ -294,19 +294,19 @@
         td_f_esc: tap_dance_escape {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <400>;
             bindings = <&mt LSHIFT F>, <&kp ESC>;
         };
         td_e_grave: tap_dance_e_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp E>, <&macro_grave_double>;
         };
         td_r_tilda: tap_dance_r_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp R>, <&kp TILDE>;
         };
     };
@@ -316,8 +316,8 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &kp O     &kp P      &ht_s UNDER MINUS
-&td_tilda     &kp A   &kp S   &mt LCTRL D           &td_f_esc        &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &td_sqt
+&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &kp O     &kp P      &ht_dbl SQT SQT
+&td_tilda     &kp A   &kp S   &mt LCTRL D           &td_f_esc        &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &macro_dbl DQT
 &kp INSERT    &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
                                             &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &td_nav     &kp LC(B)
             >;
