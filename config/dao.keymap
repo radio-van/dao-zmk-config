@@ -233,11 +233,23 @@
             tapping-term-ms = <200>;
             bindings = <&kp TILDE>, <&macro_grave_tripple>;
         };
-        td_esc: tap_dance_escape {
+        td_f_esc: tap_dance_escape {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp U>, <&kp ESC>;
+            bindings = <&mt LSHIFT F>, <&kp ESC>;
+        };
+        td_e_grave: tap_dance_e_grave {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&macro_grave_double>;
+        };
+        td_r_tilda: tap_dance_r_tilda {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp R>, <&kp TILDE>;
         };
     };
 
@@ -246,10 +258,10 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &kp E                 &kp R            &kp T                 &kp Y     &td_esc     &kp I       &kp O     &kp P      &ht_s UNDER MINUS
-&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J       &kp K       &kp L     &td_cl     &td_sqt
-&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M       &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
-                                      &mt LEFT_ALT INSERT        &sk LCTRL      &mt LSHIFT SPACE     &td_sym     &td_nav     &kp LC(B)
+&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &kp O     &kp P      &ht_s UNDER MINUS
+&td_tilda     &kp A   &kp S   &mt LCTRL D           &td_f_esc        &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &td_sqt
+&kp LC(SPC)   &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
+                                         &mt LEFT_ALT INSERT   &sk LCTRL        &mt LSHIFT SPACE     &td_sym   &td_nav     &kp LC(B)
             >;
         };
 
