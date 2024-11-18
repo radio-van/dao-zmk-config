@@ -352,19 +352,19 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &kp O     &kp P      &ht_dbl SQT SQT
-&td_tilda     &kp A   &kp S   &mt LCTRL D           &td_f_esc        &mt LGUI G            &kp H     &kp J     &kp K       &kp L     &td_cl     &macro_dbl DQT
-&kp INSERT    &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT   &kp FSLH   &td_pipe
-                                            &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &mo 2       &kp LC(B)
+&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &td_o_minus   &td_p_under   &macro_dbl DQT
+&td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L         &td_cl        &ht_dbl SQT SQT
+&kp INSERT    &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT       &kp FSLH      &td_pipe
+                                            &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &mo 2       &ht_tmux
             >;
         };
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL      &kp AT_SIGN    &kp HASH       &kp DOLLAR   &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &ht_s UNDER MINUS  &ht_s PLUS EQUAL  &kp MINUS
-&macro_brac  &kp N1        &kp N2         &kp N3         &kp N4       &kp N5       &kp N6        &kp N7    &kp N8        &kp N9             &kp N0            &kp EQUAL
-&macro_brak  &td_tilda     &kp LBRC       &kp RBRC       &kp LBKT     &kp RBKT     &kp LPAR      &kp RPAR  &kp COMMA     &kp DOT            &td_grave         &kp PLUS
-                                   &ht_dbl DQT DQT  &ht_dbl SQT SQT   &macro_spc   &to DEF       &kp FSLH  &td_pipe
+&macro_par   &kp EXCL      &kp AT_SIGN    &kp HASH       &kp DOLLAR      &kp PERCENT  &kp CARET     &kp AMPS  &kp ASTERISK  &ht_s UNDER MINUS  &ht_s PLUS EQUAL  &kp MINUS
+&macro_brac  &kp N1        &kp N2         &kp N3         &mt LSHIFT N4   &kp N5       &kp N6        &kp N7    &kp N8        &kp N9             &kp N0            &kp EQUAL
+&macro_brak  &td_tilda     &kp LBRC       &kp RBRC       &kp LBKT        &kp RBKT     &kp LPAR      &kp RPAR  &kp COMMA     &kp DOT            &td_grave         &kp PLUS
+                                   &ht_dbl DQT DQT  &ht_dbl SQT SQT      &macro_spc   &to DEF       &kp QMARK &macro_sft
             >;
         };
 
