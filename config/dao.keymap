@@ -315,12 +315,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp TILDE>, <&macro_grave_tripple>;
         };
-        td_f_esc: tap_dance_escape {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mt LSHIFT F>, <&kp ESC>;
-        };
+        // td_f_esc: tap_dance_escape {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <400>;
+        //     bindings = <&mt LSHIFT F>, <&kp ESC>;
+        // };
         td_e_grave: tap_dance_e_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
