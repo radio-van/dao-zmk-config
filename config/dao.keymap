@@ -176,6 +176,18 @@
             bindings
                 = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
         };
+        macro_tmux: macro_tmux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(B) &kp LBKT>;
+        };
+        macro_sft: macro_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp GT &kp GT>;
+        };
     };
 };
 
@@ -238,6 +250,13 @@
         //    tapping-term-ms = <200>;
         //    bindings = <&ht_ml 1 LSHIFT>, <&tog 1>, <&to DEF>;
         //};
+        ht_tmux: hold_tap_tmux {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_tmux>, <&kp>;
+        };
 
         // hold - sym
         // tap - sticky sym
