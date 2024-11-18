@@ -333,6 +333,18 @@
             tapping-term-ms = <300>;
             bindings = <&kp R>, <&kp TILDE>;
         };
+        td_o_minus: tap_dance_o_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp O>, <&kp MINUS>;
+        };
+        td_p_under: tap_dance_p_under {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp P>, <&kp UNDER>;
+        };
     };
 
     keymap {
