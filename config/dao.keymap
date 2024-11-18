@@ -250,6 +250,7 @@
         //    tapping-term-ms = <200>;
         //    bindings = <&ht_ml 1 LSHIFT>, <&tog 1>, <&to DEF>;
         //};
+
         ht_tmux: hold_tap_tmux {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -355,7 +356,7 @@
 &td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &td_o_minus   &td_p_under   &macro_dbl DQT
 &td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L         &td_cl        &ht_dbl SQT SQT
 &kp INSERT    &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT       &kp FSLH      &td_pipe
-                                            &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &mo 2       &ht_tmux
+                                            &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &mo 2       &kp LC(B)
             >;
         };
 
