@@ -67,7 +67,7 @@
         };
         combo_spc {
             timeout-ms = <50>;
-            key-positions = <16 17>;
+            key-positions = <15 16 17>;
             bindings = <&macro_spc>;
         };
         combo_par {
