@@ -322,17 +322,17 @@
         //     tapping-term-ms = <400>;
         //     bindings = <&mt LSHIFT F>, <&kp ESC>;
         // };
-        td_e_grave: tap_dance_e_grave {
+        td_r_grave: tap_dance_r_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp E>, <&macro_grave_double>;
+            bindings = <&kp R>, <&macro_grave_double>;
         };
-        td_r_tilda: tap_dance_r_tilda {
+        td_t_tilda: tap_dance_t_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp R>, <&kp TILDE>;
+            bindings = <&kp T>, <&kp TILDE>;
         };
         td_o_minus: tap_dance_o_minus {
             compatible = "zmk,behavior-tap-dance";
@@ -353,7 +353,7 @@
 
         default_layer {
             bindings = <
-&td_grave     &kp Q   &kp W   &td_e_grave           &td_r_tilda      &kp T                 &kp Y     &kp U     &kp I       &td_o_minus   &td_p_under   &macro_dbl DQT
+&td_grave     &kp Q   &kp W   &kp E                 &td_r_grave      &td_t_tilda           &kp Y     &kp U     &kp I       &td_o_minus   &td_p_under   &macro_dbl DQT
 &td_tilda     &kp A   &kp S   &mt LCTRL D           &mt LSHIFT F     &mt LGUI G            &kp H     &kp J     &kp K       &kp L         &td_cl        &ht_dbl SQT SQT
 &kp INSERT    &kp Z   &kp X   &kp C                 &kp V            &kp B                 &kp N     &kp M     &kp COMMA   &kp DOT       &kp FSLH      &td_pipe
                                             &mt LEFT_ALT INSERT      &sk LCTRL  &mt LSHIFT SPACE     &td_sym   &mo 2       &kp LC(B)
