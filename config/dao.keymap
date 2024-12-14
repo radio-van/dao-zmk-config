@@ -328,17 +328,17 @@
             tapping-term-ms = <300>;
             bindings = <&kp R>, <&macro_grave_double>;
         };
-        td_t_tilda: tap_dance_t_tilda {
+        td_t_tilda: tap_dance_y_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp T>, <&kp TILDE>;
+            bindings = <&kp Y>, <&kp TILDE>;
         };
-        td_o_minus: tap_dance_o_minus {
+        td_i_minus: tap_dance_i_minus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp O>, <&kp MINUS>;
+            bindings = <&kp I>, <&kp MINUS>;
         };
         td_p_under: tap_dance_p_under {
             compatible = "zmk,behavior-tap-dance";
