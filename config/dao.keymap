@@ -42,7 +42,7 @@
         compatible = "zmk,combos";
         combo_bkspc {
             timeout-ms = <50>;
-            key-positions = <18 19>;
+            key-positions = <19 20>;
             bindings = <&kp BACKSPACE>;
         };
         combo_enter {
@@ -50,25 +50,15 @@
             key-positions = <7 19>;
             bindings = <&macro_ent>;
         };
-        combo_enter2 {
-            timeout-ms = <50>;
-            key-positions = <19 20 21>;
-            bindings = <&macro_ent>;
-        };
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <16 17>;
+            key-positions = <15 16>;
             bindings = <&kp TAB>;
         };
         combo_esc {
             timeout-ms = <50>;
             key-positions = <4 16>;
             bindings = <&kp ESC>;
-        };
-        combo_spc {
-            timeout-ms = <50>;
-            key-positions = <14 15 16>;
-            bindings = <&macro_spc>;
         };
         combo_par {
             timeout-ms = <50>;
@@ -84,11 +74,6 @@
             timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&macro_brak>;
-        };
-        combo_grave {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            bindings = <&macro_grave_tripple>;
         };
     };
 };
@@ -365,9 +350,9 @@
         default_layer {
             bindings = <
 &td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &td_y_tilda  &kp U        &td_i_minus  &kp O     &kp P     &kp RBKT
-&td_tilda   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H        &kp J        &kp K        &kp L     &td_cl    &kp MINUS
+&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H        &kp J        &kp K        &kp L     &td_cl    &kp MINUS
 &kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N        &td_m_under  &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
-                    &mt LEFT_ALT INSERT  &sk LCTRL     &sk LSHIFT        &td_sym      &td_nav      &kp LC(B)
+                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE    &td_nav      &td_sym
             >;
         };
 
