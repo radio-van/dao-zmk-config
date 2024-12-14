@@ -85,6 +85,11 @@
             key-positions = <6 7>;
             bindings = <&macro_brak>;
         };
+        combo_grave {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&macro_grave_tripple>;
+        };
     };
 };
 
@@ -328,7 +333,7 @@
             tapping-term-ms = <300>;
             bindings = <&kp R>, <&macro_grave_double>;
         };
-        td_t_tilda: tap_dance_y_tilda {
+        td_y_tilda: tap_dance_y_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
@@ -340,11 +345,17 @@
             tapping-term-ms = <300>;
             bindings = <&kp I>, <&kp MINUS>;
         };
-        td_p_under: tap_dance_p_under {
+        td_m_under: tap_dance_m_under {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp P>, <&kp UNDER>;
+            bindings = <&kp M>, <&kp UNDER>;
+        };
+        td_b_tilda: tap_dance_b_tilda {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp B>, <&macro_grave_double>, <&macro_grave_tripple>;
         };
     };
 
@@ -353,18 +364,18 @@
 
         default_layer {
             bindings = <
-&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &td_y_tilda  &kp U     &td_i_minus  &kp O     &kp P     &kp RBKT
-&td_tilda   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H        &kp J     &kp K        &kp L     &td_cl    &td_sqt
-&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &kp B             &kp N        &kp M     &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
-                    &mt LEFT_ALT INSERT  &sk LCTRL     &sk LSHIFT        &td_sym      &td_nav   &kp LC(B)
+&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &td_y_tilda  &kp U        &td_i_minus  &kp O     &kp P     &kp RBKT
+&td_tilda   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H        &kp J        &kp K        &kp L     &td_cl    &kp MINUS
+&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N        &td_m_under  &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
+                    &mt LEFT_ALT INSERT  &sk LCTRL     &sk LSHIFT        &td_sym      &td_nav      &kp LC(B)
             >;
         };
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR          &kp PERCENT  &kp CARET  &kp AMPS   &kp ASTERISK  &macro_brac  &macro_brak  &kp UNDER
-&macro_brac  &kp N1     &kp N2       &kp N3     &kp N4              &kp N5       &kp N6     &kp N7     &kp N8        &kp N9       &kp N0       &kp EQUAL
-&macro_brak  &td_tilda  &kp LBRC     &kp RBRC   &kp LBKT            &kp RBKT     &kp LPAR   &kp RPAR   &kp COMMA     &kp DOT      &kp UNDER    &kp PLUS
+&macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR          &kp PERCENT  &kp CARET  &kp AMPS   &kp ASTERISK  &kp EQUAL  &kp PLUS   &kp PLUS
+&macro_brac  &kp N1     &kp N2       &kp N3     &kp N4              &kp N5       &kp N6     &kp N7     &kp N8        &kp N9     &kp N0     &kp EQUAL
+&macro_brak  &td_tilda  &kp LBRC     &kp RBRC   &kp LBKT            &kp RBKT     &kp LPAR   &kp RPAR   &kp COMMA     &kp DOT    &kp UNDER  &kp PLUS
                         &td_grave    &td_sqt    &td_dqt             &to DEF      &kp QMARK  &macro_sft
             >;
         };
