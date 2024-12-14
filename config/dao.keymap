@@ -42,7 +42,7 @@
         compatible = "zmk,combos";
         combo_bkspc {
             timeout-ms = <50>;
-            key-positions = <19 20>;
+            key-positions = <18 19>;
             bindings = <&kp BACKSPACE>;
         };
         combo_enter {
@@ -57,7 +57,7 @@
         };
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <15 16>;
+            key-positions = <16 17>;
             bindings = <&kp TAB>;
         };
         combo_esc {
@@ -67,7 +67,7 @@
         };
         combo_spc {
             timeout-ms = <50>;
-            key-positions = <15 16 17>;
+            key-positions = <14 15 16>;
             bindings = <&macro_spc>;
         };
         combo_par {
