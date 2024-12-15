@@ -433,10 +433,10 @@
 
         raise_layer {
             bindings = <
-&kp BT_SEL 0  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &kp HOME       &kp END      &none   &none      &none  &none
-&kp BT_SEL 1  &kp F6        &kp F7        &kp F8        &kp F9        &kp F12           &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &none
-&bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR        &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &none
-                                          &macro_trans  &macro_trans  &macro_trans      &to DEF        &to DEF      &trans
+&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp HOME       &kp END      &none   &none      &none  &none
+&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12             &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &none
+&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR          &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &none
+                              &macro_trans  &macro_trans  &macro_trans        &to DEF        &to DEF      &trans
             >;
         };
 
