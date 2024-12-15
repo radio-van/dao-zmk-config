@@ -204,7 +204,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp TILDA &kp TILDA &kp TILDA &kp TILDA &kp LEFT &kp LEFT>;
+                = <&macro_tap &kp TILDE &kp TILDE &kp TILDE &kp TILDE &kp LEFT &kp LEFT>;
         };
         macro_tmux: macro_tmux {
             compatible = "zmk,behavior-macro";
@@ -415,28 +415,28 @@
 
         default_layer {
             bindings = <
-&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &td_y_tilda  &kp U        &td_i_minus  &kp O     &kp P     &kp RBKT
-&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H        &kp J        &kp K        &kp L     &td_cl    &kp MINUS
-&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N        &td_m_under  &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
-                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE    &td_nav      &td_sym
+&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &kp Y      &kp U        &td_i_minus  &kp O     &kp P     &kp RBKT
+&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H      &kp J        &kp K        &kp L     &td_cl    &kp MINUS
+&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N      &td_m_under  &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
+                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE  &td_nav      &td_sym
             >;
         };
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR          &kp PERCENT  &kp CARET  &kp AMPS   &kp ASTERISK  &kp EQUAL  &kp PLUS   &kp PLUS
-&macro_brac  &kp N1     &kp N2       &kp N3     &kp N4              &kp N5       &kp N6     &kp N7     &kp N8        &kp N9     &kp N0     &kp EQUAL
-&macro_brak  &td_tilda  &kp LBRC     &kp RBRC   &kp LBKT            &kp RBKT     &kp LPAR   &kp RPAR   &kp COMMA     &kp DOT    &kp UNDER  &kp PLUS
-                        &td_grave    &td_sqt    &td_dqt             &to DEF      &kp QMARK  &macro_sft
+&macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT      &kp CARET   &kp AMPS   &kp ASTERISK  &kp EQUAL  &kp PLUS   &none
+&macro_brac  &kp N1     &kp N2       &kp N3     &kp N4      &kp N5           &kp N6      &kp N7     &kp N8        &kp N9     &td_0      &none
+&macro_brak  &none      &none        &none      &td_brc     &td_bkt          &td_par     &kp UNDER  &kp COMMA     &kp DOT    &kp MINUS  &none
+                                     &td_grave  &td_sqt     &td_dqt          &macro_spc  &td_tilda  &kp INSERT
             >;
         };
 
         raise_layer {
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6       &kp HOME       &kp END      &none   &none      &none  &none
-&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12      &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR   &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &none
-                                          &macro_trans  &macro_trans  &macro_trans &to DEF        &to DEF      &trans
+&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp HOME       &kp END      &none   &none      &none  &none
+&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12             &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &none
+&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR          &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &none
+                              &macro_trans  &macro_trans  &macro_trans        &to DEF        &to DEF      &trans
             >;
         };
 
