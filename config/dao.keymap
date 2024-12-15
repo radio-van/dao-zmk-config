@@ -58,8 +58,36 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <4 16>;
-            bindings = <&kp ESC>;
+            bindings = <&macro_esc>;
         };
+        combo_spc {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&macro_spc >;
+        };
+        // , .
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp COMMA>;
+        };
+        combo_dot {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp DOT>;
+        };
+        // ? >>
+        combo_question {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp QMARK>;
+        };
+        combo_shift {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&macro_sft>;
+        };
+        // () {} []
         combo_par {
             timeout-ms = <50>;
             key-positions = <30 31>;
@@ -105,6 +133,12 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &to DEF &kp ENTER>;
+        };
+        macro_esc: macro_esc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to DEF &kp ESC>;
         };
         //, <&macro_pause_for_release>
         macro_dbl: macro_double_single_param {
@@ -165,6 +199,12 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
+        };
+        macro_tilda: macro_tilda {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TILDA &kp TILDA &kp TILDA &kp TILDA &kp LEFT &kp LEFT>;
         };
         macro_tmux: macro_tmux {
             compatible = "zmk,behavior-macro";
@@ -276,6 +316,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&kp COLON>, <&macro_par>;
         };
+        td_0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N0>, <&kp COLON>, <&kp SEMI>;
+        };
         td_sqt: tap_dance_sqt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -292,19 +338,19 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp GRAVE>, <&macro_grave_double>;
+            bindings = <&kp GRAVE>, <&macro_grave_double>, <&macro_grave_tripple>;
         };
         td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp BACKSLASH>, <&kp PIPE>, <&kp RIGHT_BRACKET>;
+            bindings = <&kp PIPE>, <&kp BACKSLASH>, <&kp RIGHT_BRACKET>;
         };
         td_tilda: tap_dance_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp TILDE>, <&macro_grave_tripple>;
+            bindings = <&kp TILDE>, <&macro_tilda>;
         };
         // td_f_esc: tap_dance_escape {
         //     compatible = "zmk,behavior-tap-dance";
@@ -342,6 +388,26 @@
             tapping-term-ms = <300>;
             bindings = <&kp B>, <&macro_grave_double>, <&macro_grave_tripple>;
         };
+        // tap dance brackets
+        td_par: tap_dance_par {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp RPAR>, <&macro_par>, <&kp LPAR>;
+        };
+        td_bkt: tap_dance_bkt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp RBKT>, <&macro_brak >, <&kp LBKT>;
+        };
+        td_brc: tap_dance_brc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp RBRC>, <&macro_brac >, <&kp LBRC>;
+        };
+
     };
 
     keymap {
