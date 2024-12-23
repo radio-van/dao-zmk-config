@@ -143,9 +143,9 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_tap &to DEF>
-                , <&macro_param_1to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                = <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &to DEF>
                 ;
         };
 
@@ -367,6 +367,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp N0>, <&kp COLON>, <&kp SEMI>;
         };
+        td_flsh: tap_dance_flsh {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FLSH>, <&kp QMARK>;
+        };
 
         // double quotes
         td_grave: tap_dance_grave {
@@ -397,7 +403,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp TILDE>, <&macro_trpl TILDE>;
+            bindings = <&kp TILDE>, <&macro_dbl TILDE>;
         };
         td_i_minus: tap_dance_i_minus {
             compatible = "zmk,behavior-tap-dance";
@@ -457,7 +463,7 @@
             bindings = <                                                                                                          
 &td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &kp Y      &kp U        &td_i_minus  &kp O     &td_p     &td_lrbkt /* Х Ъ */
 &kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H      &kp J        &kp K        &kp L     &td_cl    &kp SQT   /* Э   */
-&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N      &td_m_under  &kp COMMA    &kp DOT   &kp FSLH  &td_pipe
+&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N      &td_m_under  &kp COMMA    &kp DOT   &td_flsh  &td_pipe
                     &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE  &td_nav      &td_sym
             >;
         };
