@@ -60,7 +60,7 @@
         combo_tab {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            bindings = <&kp TAB>;
+            bindings = <&macro_tab>;
         };
         // <rf>
         combo_esc {
@@ -168,7 +168,7 @@
             bindings
                 = <&macro_tap &to DEF &kp ESC>;
         };
-        macro_esc: macro_tab {
+        macro_tab: macro_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
