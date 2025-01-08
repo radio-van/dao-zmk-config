@@ -101,21 +101,21 @@
         };
 
         // () {} [] on <nm>, <hj>, <yu>
-        combo_par {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&macro_par>;
-        };
+        //combo_par {
+        //    timeout-ms = <50>;
+        //    key-positions = <30 31>;
+        //    bindings = <&macro_par>;
+        //};
         //combo_brac {
         //    timeout-ms = <50>;
         //    key-positions = <18 19>;
         //    bindings = <&macro_brac>;
         //};
-        combo_brak {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            bindings = <&macro_brak>;
-        };
+        //combo_brak {
+        //    timeout-ms = <50>;
+        //    key-positions = <6 7>;
+        //    bindings = <&macro_brak>;
+        //};
     };
 };
 // }}}
@@ -375,6 +375,12 @@
         };
 
         // double quotes
+        td_dqt: tap_dance_dqt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DQT>, <&macro_dbl DQT>;
+        };
         td_grave: tap_dance_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -387,11 +393,19 @@
             tapping-term-ms = <200>;
             bindings = <&kp SQT>, <&macro_dbl SQT>;
         };
-        td_dqt: tap_dance_dqt {
+        td_tilda: tap_dance_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DQT>, <&macro_dbl DQT>;
+            bindings = <&kp TILDE>, <&macro_dbl TILDE>;
+        };
+
+        // combine two keys in one
+        td_dot: tap_dance_dot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&kp COMMA>, <&macro_dbl_diff LT GT>;
         };
         td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
@@ -399,12 +413,8 @@
             tapping-term-ms = <200>;
             bindings = <&kp PIPE>, <&kp BACKSLASH>;
         };
-        td_tilda: tap_dance_tilda {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp TILDE>, <&macro_dbl TILDE>;
-        };
+
+        // TD on alpha keys
         td_i_minus: tap_dance_i_minus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -417,11 +427,11 @@
             tapping-term-ms = <300>;
             bindings = <&kp M>, <&kp UNDER>;
         };
-        td_b_tilda: tap_dance_b_tilda {
+        td_v_tilda: tap_dance_v_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp B>, <&macro_dbl GRAVE>, <&macro_trpl GRAVE>;
+            bindings = <&kp V>, <&macro_dbl GRAVE>, <&macro_trpl GRAVE>;
         };
 
         // tap dance brackets
@@ -430,7 +440,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RPAR>, <&macro_par>, <&kp LPAR>;
+            bindings = <&kp RPAR>, <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
         };
         td_bkt: tap_dance_bkt {
             compatible = "zmk,behavior-tap-dance";
@@ -456,15 +466,23 @@
     };
 // }}}
 
+
+// TODO
+// + comma+dot
+// + insert on far right
+// + swap nav and sym
+// + tilda on vv
+// + del ()[] combos
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <                                                                                                          
-&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &kp Y      &kp U        &td_i_minus  &kp O     &td_p     &td_lrbkt /* Х Ъ */
-&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H      &kp J        &kp K        &kp L     &td_cl    &kp SQT   /* Э   */
-&kp INSERT  &kp Z   &kp X   &kp C        &kp V         &td_b_tilda       &kp N      &td_m_under  &kp COMMA    &kp DOT   &td_flsh  &td_pipe
-                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE  &td_nav      &td_sym
+&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &td_lrbkt
+&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
+&kp INSERT  &kp Z   &kp X   &kp C        &td_v_tilda   &kp B             &kp N      &td_m_under  &td_dot      &kp COMMA  &td_flsh          &td_pipe
+                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE  &td_sym      &td_nav
             >;
         };
 
@@ -473,16 +491,16 @@
 &macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT      &kp CARET   &kp AMPS   &kp ASTERISK  &kp UNDER  &kp UNDER  &kp PLUS
 &macro_brac  &kp N1     &kp N2       &kp N3     &kp N4      &kp N5           &kp N6      &kp N7     &kp N8        &kp N9     &td_0      &kp EQUAL
 &macro_brak  &none      &none        &none      &td_brc     &td_bkt          &td_par     &kp UNDER  &trans        &trans     &trans     &kp MINUS
-                                     &td_grave  &td_sqt     &td_dqt          &macro_spc  &td_tilda  &to DEF
+                                     &td_grave  &td_sqt     &td_dqt          &macro_spc  &to DEF    &td_tilda
             >;
         };
 
         raise_layer {
             bindings = <
-&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp HOME       &kp END      &none   &none      &none  &none
-&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12             &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &none
-&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR          &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &none
-                              &macro_trans  &macro_trans  &macro_trans        &to DEF        &to DEF      &trans
+&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp HOME       &kp END      &none   &none      &none  &kp K_VOL_UP
+&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12             &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &kp K_MUTE
+&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR          &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &kp K_VOL_DN
+                              &macro_trans  &macro_trans  &macro_trans        &to DEF        &to DEF      &to DEF
             >;
         };
 
