@@ -14,7 +14,6 @@
 #define DEF 0
 #define LWR 1
 #define RSE 2
-#define ADJ 3
 
 &lt {
     quick_tap_ms = <200>;
@@ -206,6 +205,11 @@
                 , <&macro_press &kp MACRO_PLACEHOLDER>
                 , <&macro_param_1to1>
                 , <&macro_press &kp MACRO_PLACEHOLDER>
+                = <&macro_param_1to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_param_1to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &kp LEFT>
                 , <&macro_tap &kp LEFT>
                 ;
         };
@@ -231,56 +235,7 @@
                 ;
         };
 
-        //
-        macro_par: macro_par {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
-        };
-        macro_brak: macro_brak {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
-        };
-        macro_brac: macro_brac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
-        };
-
-        macro_qts: macro_qts {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp SQT &kp SQT &kp LEFT>;
-        };
-        macro_grave_double: macro_grave_double {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp GRAVE &kp GRAVE &kp LEFT>;
-        };
-        macro_grave_tripple: macro_grave_tripple {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
-        };
-        macro_tilda: macro_tilda {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TILDE &kp TILDE &kp TILDE &kp TILDE &kp LEFT &kp LEFT>;
-        };
-        macro_tmux: macro_tmux {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(B) &kp LBKT>;
-        };
+        // special
         macro_sft: macro_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -367,19 +322,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp N0>, <&kp COLON>, <&kp SEMI>;
         };
-        td_flsh: tap_dance_flsh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp FSLH>, <&kp QMARK>;
-        };
 
         // double quotes
         td_dqt: tap_dance_dqt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DQT>, <&macro_dbl DQT>;
+            bindings = <&kp DQT>, <&macro_dbl DQT>, <&macro_trpl DQT>;
         };
         td_grave: tap_dance_grave {
             compatible = "zmk,behavior-tap-dance";
@@ -391,13 +340,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&macro_dbl SQT>;
+            bindings = <&kp SQT>, <&macro_dbl SQT>, <&macro_trpl SQT>;
         };
         td_tilda: tap_dance_tilda {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp TILDE>, <&macro_dbl TILDE>;
+            bindings = <&kp TILDE>, <&macro_quad TILDE>;
         };
 
         // combine two keys in one
@@ -412,6 +361,12 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp PIPE>, <&kp BACKSLASH>;
+        };
+        td_flsh: tap_dance_flsh {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp QMARK>;
         };
 
         // TD on alpha keys
@@ -431,11 +386,10 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp V>, <&macro_dbl GRAVE>, <&macro_trpl GRAVE>;
+            bindings = <&kp V>, <&kp TILDA>;
         };
 
         // tap dance brackets
-        // TODO replace with macro_dbl_diff
         td_par: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -446,13 +400,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RBKT>, <&macro_brak >, <&kp LBKT>;
+            bindings = <&kp RBKT>, <&macro_dbl_diff LBKT RBKT>, <&kp LBKT>;
         };
         td_brc: tap_dance_brc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RBRC>, <&macro_brac >, <&kp LBRC>;
+            bindings = <&kp RBRC>, <&macro_dbl_diff LBRC RBRC>, <&kp LBRC>;
         };
 
         // for Russian layout
@@ -467,49 +421,33 @@
 // }}}
 
 
-// TODO
-// + comma+dot
-// + insert on far right
-// + swap nav and sym
-// + tilda on vv
-// + del ()[] combos
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <                                                                                                          
-&td_grave   &kp Q   &kp W   &kp E        &kp R         &kp T             &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &td_lrbkt
-&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G        &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
-&kp INSERT  &kp Z   &kp X   &kp C        &td_v_tilda   &kp B             &kp N      &td_m_under  &td_dot      &kp COMMA  &td_flsh          &td_pipe
-                    &mt LEFT_ALT LC(B)   &sk LCTRL     &sk LSHIFT        &kp SPACE  &td_sym      &td_nav
+&kp SPACE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp SPACE
+&kp LC(B)  &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
+&kp SPACE  &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N      &td_m_under  &td_dot      &td_flsh   &td_pipe          &kp SPACE
+                           &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE  &td_sym      &td_nav
             >;
         };
 
         lower_layer {
             bindings = <
-&macro_par   &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT      &kp CARET   &kp AMPS   &kp ASTERISK  &kp UNDER  &kp UNDER  &kp PLUS
-&macro_brac  &kp N1     &kp N2       &kp N3     &kp N4      &kp N5           &kp N6      &kp N7     &kp N8        &kp N9     &td_0      &kp EQUAL
-&macro_brak  &none      &none        &none      &td_brc     &td_bkt          &td_par     &kp UNDER  &trans        &trans     &trans     &kp MINUS
-                                     &td_grave  &td_sqt     &td_dqt          &macro_spc  &to DEF    &td_tilda
+&td_grave  &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT   /**/   &kp CARET   &kp AMPS   &kp ASTERISK  &kp UNDER  &kp UNDER  &kp PLUS
+&td_sqt    &kp N1     &kp N2       &kp N3     &kp N4      &kp N5        /**/   &kp N6      &kp N7     &kp N8        &kp N9     &td_0      &kp EQUAL
+&td_dqt    &none      &none        &none      &td_brc     &td_bkt       /**/   &td_par     &kp UNDER  &trans        &trans     &trans     &kp MINUS
+                                   &td_grave  &td_sqt     &td_dqt       /**/   &macro_spc  &to DEF    &td_tilda
             >;
         };
 
         raise_layer {
             bindings = <
-&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp HOME       &kp END      &none   &none      &none  &kp K_VOL_UP
-&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12             &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &kp K_MUTE
-&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR          &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &kp K_VOL_DN
-                              &macro_trans  &macro_trans  &macro_trans        &to DEF        &to DEF      &to DEF
-            >;
-        };
-
-        adjust_layer {
-            bindings = <
-&bootloader  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-&sys_reset   &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
-                                         &trans        &none         &trans        &trans        &none         &trans
+&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5          /**/   &kp HOME       &kp END      &none   &none      &none  &kp K_VOL_UP
+&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12         /**/   &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &kp K_MUTE
+&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR      /**/   &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &kp K_VOL_DN
+                              &macro_trans  &macro_trans  &macro_trans    /**/   &to DEF        &to DEF      &to DEF
             >;
         };
     };
