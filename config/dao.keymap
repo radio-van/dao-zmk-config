@@ -386,7 +386,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp V>, <&kp TILDA>;
+            bindings = <&kp V>, <&kp TILDE>;
         };
 
         // tap dance brackets
