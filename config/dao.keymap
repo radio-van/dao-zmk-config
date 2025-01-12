@@ -205,7 +205,7 @@
                 , <&macro_press &kp MACRO_PLACEHOLDER>
                 , <&macro_param_1to1>
                 , <&macro_press &kp MACRO_PLACEHOLDER>
-                = <&macro_param_1to1>
+                , <&macro_param_1to1>
                 , <&macro_press &kp MACRO_PLACEHOLDER>
                 , <&macro_param_1to1>
                 , <&macro_press &kp MACRO_PLACEHOLDER>
