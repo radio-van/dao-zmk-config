@@ -88,15 +88,15 @@
         };
 
         // >> and ? on <fg> and <hj>
-        combo_shift {
+        combo_shift_r {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&macro_sft>;
+            bindings = <&macro_sft_r>;
         };
-        combo_question {
+        combo_shift_l {
             timeout-ms = <50>;
             key-positions = <18 19>;
-            bindings = <&kp QMARK>;
+            bindings = <&macro_sft_l>;
         };
 
         // () {} [] on <nm>, <hj>, <yu>
@@ -236,7 +236,13 @@
         };
 
         // special
-        macro_sft: macro_shift {
+        macro_sft_l: macro_shift_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LT &kp LT>;
+        };
+        macro_sft_r: macro_shift_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -350,24 +356,30 @@
         };
 
         // combine two keys in one
+        td_comma: tap_dance_comma {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp BACKSLASH>;
+        };
         td_dot: tap_dance_dot {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp COMMA>, <&macro_dbl_diff LT GT>;
+            bindings = <&kp DOT>, <&kp FSLH>;
         };
         td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp PIPE>, <&kp BACKSLASH>;
+            bindings = <&kp PIPE>, <&kp QMARK>;
         };
-        td_flsh: tap_dance_flsh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp FSLH>, <&kp QMARK>;
-        };
+        //td_flsh: tap_dance_flsh {
+        //    compatible = "zmk,behavior-tap-dance";
+        //    #binding-cells = <0>;
+        //    tapping-term-ms = <200>;
+        //    bindings = <&kp FSLH>, <&kp QMARK>;
+        //};
 
         // TD on alpha keys
         td_i_minus: tap_dance_i_minus {
@@ -421,15 +433,18 @@
 // }}}
 
 
+// TODO
+// - > and >> on combos on both sides
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <                                                                                                          
-&kp SPACE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp SPACE
-&kp LC(B)  &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
-&kp SPACE  &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N      &td_m_under  &td_dot      &td_flsh   &td_pipe          &kp SPACE
-                           &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE  &td_sym      &td_nav
+&kp K_MUTE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp K_VOL_UP
+&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
+&kp SPACE   &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N      &td_m_under  &td_comma    &td_dot    &td_pipe          &kp K_VOL_DN
+                            &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE  &td_sym      &td_nav
             >;
         };
 
