@@ -374,12 +374,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp PIPE>, <&kp QMARK>;
         };
-        //td_flsh: tap_dance_flsh {
-        //    compatible = "zmk,behavior-tap-dance";
-        //    #binding-cells = <0>;
-        //    tapping-term-ms = <200>;
-        //    bindings = <&kp FSLH>, <&kp QMARK>;
-        //};
+        td_fslh: tap_dance_fslh {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+        };
 
         // TD on alpha keys
         td_i_minus: tap_dance_i_minus {
@@ -388,11 +388,23 @@
             tapping-term-ms = <300>;
             bindings = <&kp I>, <&kp MINUS>;
         };
-        td_m_under: tap_dance_m_under {
+        td_u_under: tap_dance_u_under {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp M>, <&kp UNDER>;
+            bindings = <&kp U>, <&kp UNDER>;
+        };
+        td_m_pipe: tap_dance_m_pipe {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp M>, <&kp PIPE>;
+        };
+        td_y_qmark: tap_dance_y_qmark {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp Y>, <&kp QMARK>;
         };
         td_v_tilda: tap_dance_v_tilda {
             compatible = "zmk,behavior-tap-dance";
@@ -435,25 +447,27 @@
 
 // TODO
 // - > and >> on combos on both sides
+// - tripple . as //
+// - combo on far right ins+ and ins- for volume
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <                                                                                                          
-&kp K_MUTE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &kp Y      &kp U        &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp K_VOL_UP
-&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H      &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
-&kp SPACE   &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N      &td_m_under  &td_comma    &td_dot    &td_pipe          &kp K_VOL_DN
-                            &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE  &td_sym      &td_nav
+&kp K_MUTE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &td_y_qmark  &td_u_under  &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp K_VOL_UP
+&kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H        &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
+&kp SPACE   &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N        &td_m_pipe   &td_comma    &td_dot    &td_fslh          &kp K_VOL_DN
+                            &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE    &td_sym      &td_nav
             >;
         };
 
         lower_layer {
             bindings = <
-&td_grave  &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT   /**/   &kp CARET   &kp AMPS   &kp ASTERISK  &kp UNDER  &kp UNDER  &kp PLUS
-&td_sqt    &kp N1     &kp N2       &kp N3     &kp N4      &kp N5        /**/   &kp N6      &kp N7     &kp N8        &kp N9     &td_0      &kp EQUAL
-&td_dqt    &none      &none        &none      &td_brc     &td_bkt       /**/   &td_par     &kp UNDER  &trans        &trans     &trans     &kp MINUS
-                                   &td_grave  &td_sqt     &td_dqt       /**/   &macro_spc  &to DEF    &td_tilda
+&td_tilda  &td_grave  &td_par      &kp N1     &kp N2      &kp N3        /**/   &kp EXCL    &kp AT_SIGN   &kp HASH      &kp PLUS   &kp UNDER  &trans
+&trans     &td_sqt    &td_bkt      &kp N4     &kp N5      &kp N6        /**/   &kp DOLLAR  &kp PERCENT   &kp CARET     &kp MINUS  &trans     &trans
+&trans     &td_dqt    &td_brc      &kp N7     &kp N8      &kp N9        /**/   &kp AMPS    &kp ASTERISK  &trans        &trans     &trans     &trans
+                                   &kp LT     &kp N0      &kp GT        /**/   &macro_spc  &to DEF       &trans   
             >;
         };
 
