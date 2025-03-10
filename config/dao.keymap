@@ -400,11 +400,11 @@
             tapping-term-ms = <300>;
             bindings = <&kp M>, <&kp PIPE>;
         };
-        td_y_qmark: tap_dance_y_qmark {
+        td_n_qmark: tap_dance_n_qmark {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp Y>, <&kp QMARK>;
+            bindings = <&kp N>, <&kp QMARK>;
         };
         td_v_tilda: tap_dance_v_tilda {
             compatible = "zmk,behavior-tap-dance";
@@ -455,9 +455,9 @@
 
         default_layer {
             bindings = <                                                                                                          
-&kp K_MUTE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &td_y_qmark  &td_u_under  &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp K_VOL_UP
+&kp K_MUTE  &kp Q   &kp W   &kp E        &kp R         &kp T        /**/   &kp Y        &td_u_under  &td_i_minus  &kp O      &td_p  /* Х Ъ */  &kp K_VOL_UP
 &kp LC(B)   &kp A   &kp S   &mt LCTRL D  &mt LSHIFT F  &mt LGUI G   /**/   &kp H        &kp J        &kp K        &kp L      &td_cl /* Э   */  &kp INSERT
-&kp SPACE   &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &kp N        &td_m_pipe   &td_comma    &td_dot    &td_fslh          &kp K_VOL_DN
+&kp SPACE   &kp Z   &kp X   &kp C        &td_v_tilda   &kp B        /**/   &td_n_qmark  &td_m_pipe   &td_comma    &td_dot    &td_fslh          &kp K_VOL_DN
                             &sk LALT     &sk LCTRL     &sk LSHIFT   /**/   &kp SPACE    &td_sym      &td_nav
             >;
         };
