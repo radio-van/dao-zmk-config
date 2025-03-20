@@ -464,19 +464,19 @@
 
         lower_layer {
             bindings = <
-&td_tilda  &td_bkt  &kp N1  &kp N2  &kp N3  &td_grave  /**/   &kp EXCL    &kp AT_SIGN  &kp HASH     &kp ASTERISK  &kp UNDER  &trans
-&trans     &td_par  &kp N4  &kp N5  &kp N6  &td_sqt    /**/   &kp AMPS    &kp CARET    &kp PERCENT  &kp DOLLAR    &trans     &trans
-&trans     &td_brc  &kp N7  &kp N8  &kp N9  &td_dqt    /**/   &kp PLUS    &kp EQUAL    &trans       &trans        &trans     &trans
-                            &kp N0  &kp LT  &kp GT     /**/   &macro_spc  &to DEF      &trans   
+&trans     &kp N1    &kp N2   &kp N3   &kp N4   &kp N5     /**/    &kp EXCL    &kp AT_SIGN  &kp HASH     &kp ASTERISK  &kp UNDER  &trans
+&td_tilda  &td_brc   &td_bkt  &td_par  &td_sqt  &td_dqt    /**/    &kp AMPS    &kp CARET    &kp PERCENT  &kp DOLLAR    &trans     &trans
+&trans     &kp N6    &kp N7   &kp N8   &kp N9   &kp N0     /**/    &kp PLUS    &kp EQUAL    &trans       &trans        &trans     &trans
+                          &td_grave    &kp LT   &kp GT     /**/    &macro_spc  &to DEF      &trans   
             >;
         };
 
         raise_layer {
             bindings = <
-&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5          /**/   &kp HOME       &kp END      &none   &none      &none  &kp K_VOL_UP
-&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F9        &kp F12         /**/   &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none  &kp K_MUTE
-&bt BT_SEL 2  &none   &none   &none         &none         &bt BT_CLR      /**/   &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &none  &kp K_VOL_DN
-                              &macro_trans  &macro_trans  &macro_trans    /**/   &to DEF        &to DEF      &to DEF
+&bt BT_SEL 0  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5          /**/    &kp HOME       &kp END      &none   &none      &none        &kp K_VOL_UP
+&bt BT_SEL 1  &kp F6  &kp F7  &kp F8        &kp F10       &kp F12         /**/    &kp LEFT       &kp DOWN     &kp UP  &kp RIGHT  &none        &kp K_MUTE
+&bt BT_SEL 2  &none   &none   &none         &bootloader   &bt BT_CLR      /**/    &kp PAGE_DOWN  &kp PAGE_UP  &none   &none      &bootloader  &kp K_VOL_DN
+                              &macro_trans  &macro_trans  &macro_trans    /**/    &to DEF        &to DEF      &to DEF
             >;
         };
     };
